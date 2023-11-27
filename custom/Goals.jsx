@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
-import Items from "./GoalItems";
+//import Items from "./GoalItems";
 const Goals = () => {
   return (
     <View style={styles.container}>
@@ -9,10 +9,9 @@ const Goals = () => {
         <Text>Something something something</Text>
         <Text>Something something something</Text>
         <Text>Something something something</Text>
-        <Text>Something something something</Text>
+        <Text>Something someing something</Text>
         <Text>Something something something</Text>
       </View>
-      <Items />
     </View>
   );
 };
@@ -22,13 +21,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "600",
   },
-
-  Items: {
-    gap: 10,
-  },
   container: {
     gap: 20,
     paddingVertical: 10,
+  },
+  Items: {
+    gap: 10,
   },
 });
 

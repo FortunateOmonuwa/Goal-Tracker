@@ -19,7 +19,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    //flex: 1,
+    flex: 4,
 
     backgroundColor: "#fff",
 
@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 17,
 
     //alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
+    alignItems: "flex-start",
   },
 
   inputContainer: {
@@ -38,9 +39,9 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingBottom: "3%",
     gap: 10,
-    flex: 0,
+    flex: 0.3,
   },
   goals: {
-    flex: 1,
+    flex: 3.7,
   },
 });

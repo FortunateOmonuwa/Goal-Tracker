@@ -1,10 +1,9 @@
 import { Text, View } from "react-native";
 //import CheckBox from "@react-native-community/";
 
-import React, { useState } from "react";
+//import React, { useState } from "react";
 const Items = () => {
-  const [date, setDate] = useState(new Date());
-  return <View>{/* <CheckBox /> */}</View>;
+  return <View></View>;
 };
 
 export default Items;
