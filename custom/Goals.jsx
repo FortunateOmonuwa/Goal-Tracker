@@ -1,21 +1,23 @@
-import { View, Text, StyleSheet } from "react-native";
-//import Items from "./GoalItems";
-const Goals = ({ goals }) => {
+import { View, Text, StyleSheet, ScrollView } from "react-native";
+import Items from "./GoalItems";
+const Goals = ({ goals, deleteGoal }) => {
   const goalItems = goals.map((goal) => {
-    return <Text key={goal}>{goal}</Text>;
+    return <Items key={goal} goal={goal} deleteGoal={deleteGoal} />;
   });
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.header}>Goals</Text>
       <View style={styles.Items}>{goalItems}</View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   header: {
     fontSize: 20,
-    fontWeight: "600",
+    fontWeight: "700",
+    textTransform: "uppercase",
+    paddingBottom: 20,
   },
   container: {
     gap: 20,

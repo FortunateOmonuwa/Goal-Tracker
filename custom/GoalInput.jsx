@@ -6,7 +6,7 @@ const Input = ({ placeholder, onChangeText, value }) => {
       placeholder={placeholder}
       style={styles.input}
       onChangeText={onChangeText}
-      //value={value}
+      defaultValue={value}
     />
   );
 };
