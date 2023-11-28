@@ -6,10 +6,7 @@ import Goals from "./custom/Goals";
 import { useState } from "react";
 //import { v4 as uuidv4 } from "uuid";
 export default function App() {
-  const [input, setInput] = useState({
-    id: "",
-    text: "",
-  });
+  const [input, setInput] = useState("");
   const [goals, setGoals] = useState([]);
   const hangleInput = (e) => {
     //console.log(e);
@@ -17,19 +14,20 @@ export default function App() {
   };
   const handleSubmit = () => {
     console.log(input);
-    const [id, text] = input;
-    const newInput = {
-      //id: uuidv4(),
-      text: input.text,
-    };
-    setGoals((prevGoals) => [...prevGoals, input]);
 
-    setInput({ id: "", text: "" });
+    const newInput = {
+      key: Math.random().toString(),
+      text: input,
+    };
+
+    if (input !== "") {
+      setGoals((prevGoals) => [...prevGoals, newInput]);
+    }
   };
 
-  const handleDelete = (goal) => {
+  const handleDelete = (id) => {
     //console.log(goal);
-    setGoals((items) => items.filter((item) => item !== goal));
+    setGoals((items) => items.filter((item) => item.key !== id));
   };
   return (
     <View style={styles.container}>
@@ -37,7 +35,7 @@ export default function App() {
         <Input
           placeholder="enter your goal"
           onChangeText={hangleInput}
-          value={input.text}
+          value={input}
         />
         <Submit title="submit" onClick={handleSubmit} />
       </View>

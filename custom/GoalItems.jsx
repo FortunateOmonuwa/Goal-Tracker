@@ -1,15 +1,24 @@
-import { Text, View, StyleSheet, Button, ScrollView } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Button,
+  ScrollView,
+  FlatList,
+} from "react-native";
 //import CheckBox from "@react-native-community/";
 
 //import React, { useState } from "react";
-const Items = ({ goal, deleteGoal }) => {
+const Items = ({ item, deleteGoal }) => {
   return (
-    <ScrollView style={{ width: "100%" }}>
-      <View key={goal} style={styles.items}>
-        <Text style={{ color: "#fff", fontWeight: "600" }}>{goal}</Text>
+    <View style={{ width: "100%" }}>
+      <View key={item.item.key} style={styles.items}>
+        <Text style={{ color: "#fff", fontWeight: "600" }}>
+          {item.item.text}
+        </Text>
         <Button title="❌" color={"#5e0acc"} onPress={deleteGoal} />
       </View>
-    </ScrollView>
+    </View>
   );
 };
 

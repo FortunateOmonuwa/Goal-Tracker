@@ -1,14 +1,21 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, FlatList } from "react-native";
 import Items from "./GoalItems";
 const Goals = ({ goals, deleteGoal }) => {
-  const goalItems = goals.map((goal) => {
-    return <Items key={goal} goal={goal} deleteGoal={deleteGoal} />;
-  });
+  //   const goalItems = goals.map((goal) => {
+  //     return <Items key={goal} goal={goal} deleteGoal={deleteGoal} />;
+  //   });
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.header}>Goals</Text>
-      <View style={styles.Items}>{goalItems}</View>
-    </ScrollView>
+    <FlatList
+      data={goals}
+      renderItem={(itemData) => {
+        return (
+          <View style={styles.container}>
+            <Items item={itemData} deleteGoal={deleteGoal} />
+          </View>
+        );
+      }}
+      style={styles.container}
+    />
   );
 };
 
