@@ -1,17 +1,13 @@
 import { View, Text, StyleSheet } from "react-native";
 //import Items from "./GoalItems";
-const Goals = () => {
+const Goals = ({ goals }) => {
+  const goalItems = goals.map((goal) => {
+    return <Text key={goal}>{goal}</Text>;
+  });
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Goals</Text>
-      <View style={styles.Items}>
-        <Text>Something something something</Text>
-        <Text>Something something something</Text>
-        <Text>Something something something</Text>
-        <Text>Something something something</Text>
-        <Text>Something someing something</Text>
-        <Text>Something something something</Text>
-      </View>
+      <View style={styles.Items}>{goalItems}</View>
     </View>
   );
 };
